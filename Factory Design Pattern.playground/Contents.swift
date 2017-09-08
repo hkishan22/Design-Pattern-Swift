@@ -2,6 +2,7 @@
 
 import UIKit
 
+// Abstract Class
 protocol Car {
     
     func type() -> CarTypes
@@ -10,11 +11,14 @@ protocol Car {
     func features()->String
 }
 
+
+// types of available Cars
 enum CarTypes  {
     case HatchBack , Sedan, Suv
 }
 
 
+// Classes inherit from same Abstaract Class . Or using Same Protocol
 class HatchBack: Car {
 
     func type() -> CarTypes {
@@ -62,6 +66,8 @@ class Sedan: Car {
     }
 }
 
+
+// Factory Class
 class CarFactory {
 
     static func makeCar(type:CarTypes)-> Car {
@@ -81,6 +87,7 @@ class CarFactory {
 }
 
 
+// Using Factory Class to get New Car
 let  newCar  = CarFactory.makeCar(type: .Sedan)
     print(newCar.seatAvailble())
     print(newCar.type())

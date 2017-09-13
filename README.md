@@ -2,7 +2,7 @@
 Design Patterns With Swift 3.0
 -------------------------------------------------------------------------
 
-👷 Project maintained by: [@h.kisahn22](https://www.linkedin.com/in/hari-kishan-upadhyay-bb58b22b/) (Hari Kishan Upadhyay)
+👷 Project maintained by: [@h.kishan22](https://www.linkedin.com/in/hari-kishan-upadhyay-bb58b22b/) (Hari Kishan Upadhyay)
 
 ## Table of Contents
 

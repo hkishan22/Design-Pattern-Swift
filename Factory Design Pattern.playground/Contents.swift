@@ -69,10 +69,9 @@ class Sedan: Car {
 
 // Factory Class
 class CarFactory {
-
+    
     static func makeCar(type:CarTypes)-> Car {
-        
-        
+
         switch type {
         case .HatchBack:
             return HatchBack()
@@ -88,9 +87,15 @@ class CarFactory {
 
 
 // Using Factory Class to get New Car
-let  newCar  = CarFactory.makeCar(type: .Sedan)
-    print(newCar.seatAvailble())
-    print(newCar.type())
-    print(newCar.features())
+let  newSedan  = CarFactory.makeCar(type: .Sedan)
+    print(newSedan.seatAvailble())
+    print(newSedan.type())
+    print(newSedan.features())
+
+
+let  newHatchback  = CarFactory.makeCar(type: .HatchBack)
+print(newHatchback.seatAvailble())
+print(newHatchback.type())
+print(newHatchback.features())
 
 

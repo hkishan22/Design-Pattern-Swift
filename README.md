@@ -45,84 +45,84 @@ import UIKit
 // Abstract Class
 protocol Car {
 
-func type() -> CarTypes
-func seatAvailble() -> Int
+    func type() -> CarTypes
+    func seatAvailble() -> Int
 
-func features()->String
+    func features()->String
 }
 
 
 // types of available Cars
 enum CarTypes  {
-case HatchBack , Sedan, Suv
+    case HatchBack , Sedan, Suv
 }
 
 
 // Classes inherit from same Abstaract Class . Or using Same Protocol
 class HatchBack: Car {
 
-func type() -> CarTypes {
-return .HatchBack
-}
+    func type() -> CarTypes {
+        return .HatchBack
+    }
 
-func seatAvailble() -> Int {
-return 5
-}
+    func seatAvailble() -> Int {
+        return 5
+    }
 
-func features()->String {
-return "Small car with 5 seating capabilites, Good for a small family for  city drive"
-}
+    func features()->String {
+        return "Small car with 5 seating capabilites, Good for a small family for  city drive"
+    }
 }
 
 
 class Suv: Car {
 
-func type() -> CarTypes {
-return .Suv
-}
+    func type() -> CarTypes {
+        return .Suv
+    }
 
-func seatAvailble() -> Int {
-return 7
-}
+    func seatAvailble() -> Int {
+        return 7
+    }
 
-func features()->String {
-return "Big car with 7 seating capabilites, Good for big families"
-}
+    func features()->String {
+        return "Big car with 7 seating capabilites, Good for big families"
+    }
 }
 
 
 class Sedan: Car {
 
-func type() -> CarTypes {
-return .Sedan
-}
+    func type() -> CarTypes {
+        return .Sedan
+    }
 
-func seatAvailble() -> Int {
-return 6
-}
+    func seatAvailble() -> Int {
+        return 6
+    }
 
-func features()->String {
-return "Big car with 6 seating capabilites, comfortable for long journey"
-}
+    func features()->String {
+        return "Big car with 6 seating capabilites, comfortable for long journey"
+    }
 }
 
 
 // Factory Class
 class CarFactory {
 
-static func makeCar(type:CarTypes)-> Car {
+    static func makeCar(type:CarTypes)-> Car {
 
-switch type {
-case .HatchBack:
-return HatchBack()
+    switch type {
+    case .HatchBack:
+        return HatchBack()
 
-case .Suv:
-return Suv()
+    case .Suv:
+        return Suv()
 
-case .Sedan:
-return Sedan()
-}
-}
+    case .Sedan:
+        return Sedan()
+        }
+    }
 }
 ```
 

@@ -139,8 +139,9 @@ print(newSedan.features())
 let  newHatchback  = CarFactory.makeCar(type: .HatchBack)
 print(newHatchback.seatAvailble())
 print(newHatchback.type())
-print(newHatchback.features())```
+print(newHatchback.features())
 
+```
 
 
 Info

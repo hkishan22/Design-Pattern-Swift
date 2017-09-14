@@ -695,7 +695,7 @@ Swift added direct support for it with the ### lazy attribute
 ### Example
 
 ```swift
-ass CarList {
+class CarList {
     
     //Now in Swift, this can all be simplified down to one line:
     lazy var carNames = [String]()

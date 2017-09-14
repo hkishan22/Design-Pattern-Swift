@@ -686,6 +686,69 @@ print(singletonVar2.count);              //It is also 5 Since Singleton Class ha
 
 ```
 
+😴 Lazy Initialization
+----------
+
+Lazy initialization (also sometimes called lazy instantiation, or lazy loading) is a technique for delaying the creation of an object or some other expensive process until it’s needed. When programming for iOS, this is helpful to make sure you utilize only the memory you need when you need it.
+Swift added direct support for it with the ### lazy attribute
+
+### Example
+
+```swift
+ass CarList {
+    
+    //Now in Swift, this can all be simplified down to one line:
+    lazy var carNames = [String]()
+    
+    
+    //If you wanted to add logic to your lazy initialization, Swift makes this easy by letting you define a closure after your lazy property:
+    lazy var carModels: [String] = {
+        var temporaryCarModels = [String]()
+        temporaryCarModels.append("Alto")
+        return temporaryCarModels
+    }()
+
+    
+    
+    //If you prefer, you can also lazily initiate your property using an instance method:
+    lazy var carCompaniesName: [String] = self.companiesName()
+    
+    func companiesName() -> [String] {
+        var company = ["Maruti"]
+        return company
+    }
+
+    
+    
+    //If you prefer, you can also lazily initiate your property using an Class method:
+    lazy var carTypes: [String] = CarList.carBuildTypes()
+    
+    class func carBuildTypes() -> [String] {
+        var types = ["Hatchback","Sedan","Suv"]
+        return types
+    }
+
+    init() {
+    }
+}
+
+
+let list = CarList()
+print(list.carNames)
+print(list.carModels)
+print(list.carCompaniesName)
+print(list.carTypes)
+
+/* //Output
+[]
+["Alto"]
+["Maruti"]
+["Hatchback", "Sedan", "Suv"]
+ */
+
+```
+
+
 ###
 
 Info

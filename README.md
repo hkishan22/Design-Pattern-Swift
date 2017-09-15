@@ -747,9 +747,73 @@ print(list.carTypes)
  */
 
 ```
+🔌 Adapter
+----------
 
+The adapter pattern is used to provide a link between two otherwise incompatible types by wrapping the "adaptee" with a class that supports the interface required by the client.
+
+### Example
+We have Old music system and we want to add a bluetooth technolgy to play and stop old music system . So instead of making New Bluetooth Music system , we made a Adapter Class that will make Old music system work with bluetooth .
 
 ###
+
+```swift
+Target
+protocol MusicSystem {
+    
+    func play()
+    func stop()
+}
+
+
+//Adaptee Class
+class OldMusicSystem:MusicSystem{
+    
+    func play(){
+        print("Old Music system Playing")
+    }
+    
+    func stop(){
+        print("Old Music system Stoped")
+    }
+    
+    init() {
+        
+    }
+}
+
+
+
+// Adapter Class
+class BluetoothMusicSystem:MusicSystem{
+    
+    var oldSystem:OldMusicSystem
+    
+    init(musicSystem:OldMusicSystem) {
+        self.oldSystem = musicSystem
+    }
+    
+    func play(){
+        self.oldSystem.play()
+    }
+    
+    func stop(){
+        self.oldSystem.stop()
+    }
+ 
+}
+
+
+//Client
+let oldMusicSystem = OldMusicSystem()
+let bluetoothMusicSystem = BluetoothMusicSystem(musicSystem: oldMusicSystem)
+bluetoothMusicSystem.play()
+bluetoothMusicSystem.stop()
+
+//OUTPUT:
+Old Music system Playing
+Old Music system Stoped
+```
 
 Info
 ====
